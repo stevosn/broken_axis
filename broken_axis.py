@@ -40,6 +40,22 @@ def check_and_separate(fun, kws, exclude=True):
 def draw_breaks(ax, total_size, pos='right', size=1.5, angle=60, width=None, **kws):
     """
     Draw bars at the end of an axis break.
+
+    Arguments
+    ---------
+    ax : Axis
+    total size : float
+        Nominal size of the axis.
+    pos : ['right', 'left', 'top', 'bottom']
+        On which spine to draw the break
+    size : float
+        Length of the break
+    angle : float
+        Angle of the break bar
+    width : None or float
+        Linewidth of the break bar
+    kws : dict
+        Keyword arguments for the plotting function
     """
     def gen_points(pos, xlim, ylim, dx, dy):
         """
@@ -78,7 +94,10 @@ def draw_breaks(ax, total_size, pos='right', size=1.5, angle=60, width=None, **k
         dy = size * sin(angle * pi / 180) / 100 * total_size
 
     args = (xlim, ylim, dx, dy)
-    kws = dict(color='k', clip_on=False, linewidth=width or rcParams['axes.linewidth'])
+    kws_ = dict(color='k', clip_on=False, linewidth=width or rcParams['axes.linewidth'])
+    for k, v in kws_.items():
+        if k not in kws:
+            kws.update({k: v})
     
     lns = []
     for p in pos_conj:
@@ -200,4 +219,5 @@ def broken_axis(x, y, breaks, dbreaks=None, along_x=True, dgrid=100, space=1, fi
     
     for ax, pos in break_positions:
         draw_breaks(ax, total_size, pos=pos, **draw_break_kws)
+
     return (fig, axs)
