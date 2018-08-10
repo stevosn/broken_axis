@@ -15,6 +15,7 @@ __status__ = "testing"
 from numpy import pi, cos, sin, logical_and
 from matplotlib import rcParams
 from inspect import getfullargspec
+import matplotlib.gridspec as gridspec
 
 
 def check_and_separate(fun, kws, exclude=True):
@@ -92,7 +93,25 @@ def draw_breaks(ax, total_size, pos='right', size=1.5, angle=60, width=None, **k
 
 def broken_axis(x, y, breaks, dbreaks=None, along_x=True, dgrid=100, space=1, figure=None, plt_kws={}, **kws):
     """
-    Plot data, x and y, in a broken axis at points 'break' with missing 'd_break'.
+    Plot data, x and y, in a broken axis.
+
+    Arguments
+    ---------
+    x : array-like
+    y : arraylike
+    breaks : float or list of float
+        Value or list of values to break the axis.
+    dbreaks : float or list of float
+        Distances to leave plotting.
+    along_x : bool
+        Whether the breaks are along the x-axis.
+    dgrid : int
+        Fineness of the grid for the different axes.
+    space : int
+        The space betweent the breaks in units of the grid defined by dgrid.
+    figure : None or figure object
+    plt_kws : dict
+        Key-word arguments forwarded to plot.
     """    
     n_brks = len(breaks)
     
