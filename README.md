@@ -2,7 +2,7 @@
 
 Plot data in matplotlib-plots with a broken axes.
 
-This is a simple approach. There is still alot to solve, such as plotting with lines instead of markers, probably histograms do not work, log scales, etc. Well, it's a starting point, anybody is welcome to contribute.  There are also other approaches, e.g. [here](https://github.com/matplotlib/matplotlib/issues/11682).
+This is a simple approach. There is still alot to solve, such as plotting with lines instead of markers, probably histograms do not work, log scales, etc. Well, it's a starting point, anybody is welcome to contribute.  There are also other approaches, e.g. [here](https://github.com/matplotlib/matplotlib/issues/11682) or [here](https://github.com/bendichter/brokenaxes).
 
 ## Usage
 
