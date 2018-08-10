@@ -20,7 +20,7 @@ fig, axs = broken_axis(t,  # x-data
 
 ## breaks along x axis
 ```
-from broken_axis import broken_axis 
+from broken_axis import broken_axis
 
 fig = plt.figure()
 fig, axs = broken_axis(t,  # x-data
