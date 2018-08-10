@@ -2,7 +2,11 @@
 
 Plot data in matplotlib-plots with a broken axes.
 
-## breaks along y axis
+This is a simple approach. There is still alot to solve, such as plotting with lines instead of markers, probably histograms do not work, log scales, etc. Well, it's a starting point, anybody is welcome to contribute.  There are also other approaches, e.g. [here](https://github.com/matplotlib/matplotlib/issues/11682).
+
+## Usage
+
+### breaks along y axis
 
 ```
 from broken_axis import broken_axis
@@ -18,7 +22,7 @@ fig, axs = broken_axis(t,  # x-data
                        )
 ```
 
-## breaks along x axis
+### breaks along x axis
 ```
 from broken_axis import broken_axis
 
