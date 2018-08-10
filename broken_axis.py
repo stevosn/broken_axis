@@ -173,12 +173,10 @@ def broken_axis(x, y, breaks, dbreaks=None, along_x=True, dgrid=100, space=1, fi
             if idx > 0:
                 ax.tick_params(left=False, labelleft=False)
                 ax.spines['left'].set_visible(False)
-                # draw_breaks(ax, total_size, pos='left', **draw_break_kws)
                 break_positions.append((ax, 'left'))
             if idx < n_brks:
                 ax.tick_params(right=False, labelright=False)
                 ax.spines['right'].set_visible(False)
-                #draw_breaks(ax, total_size, pos='right', **draw_break_kws)
                 break_positions.append((ax, 'right'))
             ax.set_xlim([min(x_part), max(x_part)])
         else:
@@ -193,12 +191,10 @@ def broken_axis(x, y, breaks, dbreaks=None, along_x=True, dgrid=100, space=1, fi
             if idx > 0:
                 ax.tick_params(bottom=False, labelbottom=False)
                 ax.spines['bottom'].set_visible(False)
-                #draw_breaks(ax, total_size, pos='bottom', **draw_break_kws)
                 break_positions.append((ax, 'bottom'))
             if idx < n_brks:
                 ax.tick_params(top=False, labeltop=False)
                 ax.spines['top'].set_visible(False)
-                #draw_breaks(ax, total_size, pos='top', **draw_break_kws)
                 break_positions.append((ax, 'top'))
         axs.append(ax)
     
